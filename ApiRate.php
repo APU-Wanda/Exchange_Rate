@@ -26,24 +26,32 @@ class ApiRate
         echo '<pre>';
         echo 'The exchange rate for the the target country which is '.$symbol . ' ';
         print_r($arr_result['rates'][$symbol]);
+        retuurn $arr_result['rates'][$symbol];
 
-        echo '<pre>';
-        echo 'The amount for the target country according to the today\'s exchange rate : ';
-        print_r(($arr_result['rates'][$symbol]) * $money);
+//        echo '<pre>';
+//        echo 'The amount for the target country according to the today\'s exchange rate : ';
+//        print_r(($arr_result['rates'][$symbol]) * $money);
 //curl_close($curl);
 //echo $response;
     }
 
-    public function __construct()
+//     public function __construct()
+//     {
+//    //      self::rate('GBP','EUR');
+//     //   print var_dump($var);
+// //        echo 'The amount for the target country according to the todays exchange rate ';
+// //     //   $var = self::rate('GBP','EUR');
+// //        $amount = (self::rate('GBP','EUR')) * 100;
+// //        print $amount * 100000;
+//     }
+    
+    public function amount(int $amount)
     {
-   //      self::rate('GBP','EUR');
-    //   print var_dump($var);
-//        echo 'The amount for the target country according to the todays exchange rate ';
-//     //   $var = self::rate('GBP','EUR');
-//        $amount = (self::rate('GBP','EUR')) * 100;
-//        print $amount * 100000;
+        $exchangeRate = $this->rate();
+        return $exchangeRate * $amount;
     }
 }
 
 $object = new ApiRate();
-$result = $object->rate('GBP','EUR', 200);
+$result = $object->rate('GBP','EUR');
+$result = $object->amunt(200);
