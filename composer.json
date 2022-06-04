@@ -13,6 +13,8 @@
       "ext-json": "*",
         "nyholm/psr7": "^1.5",
         "ipdata/api-client": "^0.1.1",
-      "ext-curl": "*"
+      "ext-curl": "*",
+      "ext-pgsql": "*",
+      "ext-pdo": "*"
     }
 }
