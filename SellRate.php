@@ -53,6 +53,7 @@ class SellRate
         $sell_rate = ($buy_rate - ($flat_margin)) - ($percent_margin / 100);
 
         $sql = "INSERT INTO exchange_rates(id,from_currency,to_currency,sell_rate,buy_rate,created)VALUES(NULL,$symbol,$base,$buy_rate,$sell_rate,NULL)";
+        pg_query($conn, $sql);
 //curl_close($curl);
 //echo $response;
     }
